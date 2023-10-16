@@ -1,0 +1,7 @@
+def multiple_of_5_and_7(number):
+    return number % 5 == 0 and number % 7 == 0
+number = int(input("Enter an integer: "))
+if multiple_of_5_and_7(number):
+    print(f"{number} is a multiple of both 5 and 7.")
+else:
+    print(f"{number} is not a multiple of both 5 and 7.")
