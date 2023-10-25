@@ -1,28 +1,29 @@
-def binary_search(my_list, low, high, elem):
-    if high >= low:
- 
-        mid = (high + low) // 2
- 
-        if my_list[mid] == elem:
-            return mid
- 
-        elif my_list[mid] > elem:
-            return binary_search(my_list, low, mid - 1, elem)
- 
-        else:
-            return binary_search(my_list, mid + 1, high, elem)
- 
-    else:
-        return -1
-        
-my_list = [ 1, 9, 11, 21, 34, 54, 67, 90 ]
-elem_to_search = 1
-print("The list is")
-print(my_list)
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
 
-my_result = binary_search(my_list,0,len(my_list)-1,elem_to_search)
- 
-if my_result != -1:
-    print("Element found at index ", str(my_result))
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] == target:
+            return mid  # Target found, return its index
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return -1  # Target not found
+
+# User input to create a sorted list
+input_numbers = input("Enter a sorted list of numbers separated by spaces: ")
+numbers = [int(num) for num in input_numbers.split()]
+
+target = int(input("Enter the target number to search for: "))
+
+# Perform binary search
+result = binary_search(numbers, target)
+
+if result != -1:
+    print(f"Target {target} found at index {result}.")
 else:
-    print("Element not found!")
+    print(f"Target {target} not found in the list.")
+
