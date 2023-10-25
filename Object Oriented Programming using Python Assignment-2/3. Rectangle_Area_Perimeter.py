@@ -17,7 +17,6 @@ class Rectangle:
         else:
             return "Both rectangles have the same area."
 
-# Example usage:
 rect1 = Rectangle(6, 7)
 rect2 = Rectangle(6, 9)
 print(rect1.compare_area(rect2))
