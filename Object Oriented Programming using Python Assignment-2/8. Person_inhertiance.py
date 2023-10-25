@@ -26,15 +26,18 @@ class Teacher(Person):
     def introduce(self):
         return f"My name is {self.name}, I am {self.age} years old, and I teach {self.subject}."
 
-person1 = Person("Mohan", 25, "Male")
-student1 = Student("Shyam", 20, "Male", "Science")
-teacher1 = Teacher("Radhe", 35, "Female", "Social Science")
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+gender = input("Enter your gender: ")
 
-print(person1.greet())
-print(person1.introduce())
+person = Person(name, age, gender)
+print(person.greet())
+print(person.introduce())
 
-print(student1.greet())
-print(student1.introduce())
+course = input("Enter your course: ")
+student = Student(name, age, gender, course)
+print(student.introduce())
 
-print(teacher1.greet())
-print(teacher1.introduce())
+subject = input("Enter your subject: ")
+teacher = Teacher(name, age, gender, subject)
+print(teacher.introduce())

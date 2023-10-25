@@ -19,6 +19,18 @@ class Elephant(Animal):
     def sound(self):
         return "trumpet"
 
-cat = Cat()
-print(cat.sound())
+animal_type = input("Enter the type of animal (Sheep, Lion, Cat, Elephant): ")
 
+if animal_type == "Sheep":
+    animal = Sheep()
+elif animal_type == "Lion":
+    animal = Lion()
+elif animal_type == "Cat":
+    animal = Cat()
+elif animal_type == "Elephant":
+    animal = Elephant()
+else:
+    print("Animal type not recognized.")
+    exit()
+
+print(f"The {animal_type} makes the sound: {animal.sound()}")

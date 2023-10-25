@@ -6,6 +6,13 @@ class Student:
 
     def display_information(self):
         return f"Name: {self.name}, Age: {self.age}, Grade: {self.grade}"
+    
+name = input("Enter the student's name: ")
+age = int(input("Enter the student's age: "))
+grade = input("Enter the student's grade: ")
 
-student1 = Student("Munna Bhaiya", 27, "O")
-print(student1.display_information())
+student = Student(name, age, grade)
+
+
+print("Student Information:")
+print(student.display_information())

@@ -27,13 +27,22 @@ class Calculator:
 
     def __truediv__(self, other):
         return self.divide(other)
-calculator = Calculator(199)
-result1 = calculator + 36
-result2 = calculator - 61
-result3 = calculator * 25
-result4 = calculator / 17
+initial_value = float(input("Enter the initial value for the calculator: "))
+calculator = Calculator(initial_value)
 
-print("Addition:", result1)
-print("Subtraction:", result2)
-print("Multiplication:", result3)
-print("Division:", result4)
+# Perform arithmetic operations
+operation = input("Enter the operation (+, -, *, /): ")
+operand = float(input("Enter the operand: "))
+
+if operation == "+":
+    result = calculator + operand
+elif operation == "-":
+    result = calculator - operand
+elif operation == "*":
+    result = calculator * operand
+elif operation == "/":
+    result = calculator / operand
+else:
+    result = "Invalid operation."
+
+print(f"Result: {result}")
