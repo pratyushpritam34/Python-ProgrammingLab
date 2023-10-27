@@ -4,22 +4,18 @@ class Animal(ABC):
     @abstractmethod
     def sound(self):
         pass
-class Sheep(Animal):
+class Dog(Animal):
     def sound(self):
-        return "Baa"
-class Lion(Animal):
-    def sound(self):
-        return "roar"
-
+        return "Bhoo"
 class Cat(Animal):
     def sound(self):
-        return "Mew"
+        return "meow"
 
-class Elephant(Animal):
+class Cow(Animal):
     def sound(self):
-        return "trumpet"
+        return "Moo"
 
-animal_type = input("Enter the type of animal (Sheep, Lion, Cat, Elephant): ")
+animal_type = input("Enter the type of animal (Sheep, Lion, Cat): ")
 
 if animal_type == "Sheep":
     animal = Sheep()
@@ -27,8 +23,6 @@ elif animal_type == "Lion":
     animal = Lion()
 elif animal_type == "Cat":
     animal = Cat()
-elif animal_type == "Elephant":
-    animal = Elephant()
 else:
     print("Animal type not recognized.")
     exit()
